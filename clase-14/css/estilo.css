@@ -1,0 +1,178 @@
+/*Estilos a las cajas*/
+
+.item {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 3px solid black;
+}
+
+/*GRADIENTES*/
+
+/*Son fondos en degradè*/
+
+/*Estos pueden ser lineales o radiales*/
+
+/*LINEAL*/
+
+.cajaA {
+    background: linear-gradient(to right top,#EE7C7C, #EF1010,red,yellow,gray,blue,green);
+}
+
+/*La forma prederteminada es de arriba hacia abajo*/
+/*Top, bottom, left, right*/
+
+.cajaB {
+    background-image: linear-gradient(to left,#F0F2F0,#000C40); 
+}
+
+/*Ejemplo con un boton*/
+
+button {
+    background-image: linear-gradient(to left, #EE7C7C, #EF1010);
+    padding: 10px;
+    border-radius: 6px;
+    color: #fafafa;
+    cursor: pointer;
+    border: nome;
+}
+
+/*RADIALES*/
+
+.cajaC {
+    background: radial-gradient(ellipse 250px 100px, #904e95, #e96443);
+}
+
+/********* TRANSFORMACIONES *********/
+
+/*Una transformacion es una modificacion en la forma en que se ve un elemento.
+Todo elemento trasformado por css cambia la forma en la que se ve pero no el lugar que ocupa. */
+
+/*Podemos mover un elemento, escalar su tamaño, girarlo, etc..*/
+
+/*Trasladar un elemento*/
+
+.cajaUno {
+    background-color: red;
+    transform: translate(50px, 20px);
+}
+
+/*Le pasamos dos valores, el primero es el eje horizontal y el segundo es el vertical. */
+
+/*ROTAR*/
+
+.cajaDos {
+    background-color: bisque;
+    transform: rotate(-50deg);
+}
+
+
+/*ESCALAR UN ELEMENTO */
+
+.cajaTres {
+    background-color: cadetblue;
+    transform: scale(1.2, 0.8);
+}
+
+/*Admite dos valores separados por coma */
+/*El primer valor es el ancho (eje x) */
+/*El segundo valor es el alto (eje y) */
+/*Valores mayores a 1 agrandan */
+/*Valores entre 0 y 1 achican */
+
+/*SESGAR UN ELEMENTO */
+
+.cajaCuatro {
+    background-color: #904e95;
+    transform: skew(10deg, 20deg);
+}
+
+
+/* TRANSICIONES */
+
+.divUno {
+    background-color: #5f7e78;
+    /*transition: all 0.5s; */
+    transition: height 0.5s, width 4s;
+} 
+
+.divUno:hover {
+    height: 320px;
+    width: 320px;
+}
+
+/*Ejemplo 2: */
+
+.divDos {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt8pCcU438Qew8KnCmyWCzboxBbJVFEnCCbg&usqp=CAU);
+    filter: grayscale(90%);
+    transition: all 0.5s;
+}
+
+.divDos:hover {
+     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZjP6TeXNXNtvn1_Dt_s2LtmyLUCsb3HrRXQ&usqp=CAU);
+    filter: grayscale(10%)
+}
+
+
+/*Animaciones */
+
+/*Una animacion es un efcto que se loopea tantas veces como uno quiera */
+/*No depende de un cambio de estado, el elemneto se animara desde que se carga la pagina */
+
+@keyframes animacion {
+    0% {
+        width: 200px;
+    }
+
+    25% {
+        width: 240px;
+    }
+
+    50% {
+        width: 260px;
+    }
+
+    75% {
+        width: 280px;
+    }
+
+    100% {
+        width: 300px;
+    }
+}
+
+
+.divTres {
+    background-color: #904e95;
+    
+    /* NOMBRE DELKEYFRAME */
+    animation-name: animacion;
+
+    /*CANTIDAD DE REPETICIONES */
+    animation-iteration-count: infinite;
+
+    /*DURACION DELA ANIMACION */
+    animation-duration: 2s;
+
+    /*SUAVISAR LA ANIMACION */
+    animation-timing-function: ease-in-out;
+}
+
+/*EJEMPLO CON UN TEXTO*/
+
+@keyframes texto {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+h1 {
+    animation-name: texto;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
